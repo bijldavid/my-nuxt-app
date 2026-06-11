@@ -157,6 +157,7 @@ footer .container .right ul:nth-of-type(2) li a::before {
     aspect-ratio: 1;
     top: 50%;
     right: 0;
+    z-index: 1;
     translate: 0 -50%;
     background-size: 80%;
     background-repeat: no-repeat;
@@ -168,19 +169,19 @@ footer .container .right ul:nth-of-type(2) li a:hover {
 }
 
 footer .container .right ul:nth-of-type(2) li:nth-of-type(1) a::before {
-    background-image: url('images/github-footer.png');
+    background-image: url('/images/github-footer.png');
 }
 
 footer .container .right ul:nth-of-type(2) li:nth-of-type(2) a::before {
-    background-image: url('images/linkedin-footer.png');
+    background-image: url('/images/linkedin-footer.png');
 }
 
 footer .container .right ul:nth-of-type(2) li:nth-of-type(1) a:hover::before {
-    background-image: url('images/github-footer-hover.png');
+    background-image: url('/images/github-footer-hover.png');
 }
 
 footer .container .right ul:nth-of-type(2) li:nth-of-type(2) a:hover::before {
-    background-image: url('images/linkedin-footer-hover.png');
+    background-image: url('/images/linkedin-footer-hover.png');
 }
 
 footer .container>p {
