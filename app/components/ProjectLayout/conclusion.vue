@@ -98,7 +98,7 @@ section p {
     font-family: 'poppins', sans-serif;
     font-size: var(--p-size);
     font-weight: 400;
-    line-height: 1.5em;
+    line-height: 1.75em;
     columns: 40ch;
     column-gap: 3rem;
     color: var(--background-solid);

@@ -34,7 +34,6 @@ header nav a {
     font-size: var(--small-size);
     font-weight: 400;
     color: var(--text);
-    line-height: 1.5em;
 }
 
 header nav a:not(:last-of-type)::after {

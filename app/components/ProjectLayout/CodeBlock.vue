@@ -172,7 +172,7 @@ onMounted(async () => {
     font-family: 'rm-mono', monospace;
     overflow-x: auto;
     font-size: var(--small-size);
-    line-height: 1.6;
+    line-height: 1.75em;
 }
 
 code.snippet {

@@ -65,7 +65,7 @@ section .title-container div p {
     font-size: var(--small-size);
     font-weight: 400;
     color: var(--border-400);
-    line-height: 1.5em;
+    line-height: 1.75em;
 }
 
 section .title-container div img {

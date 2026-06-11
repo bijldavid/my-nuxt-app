@@ -389,7 +389,7 @@ const hideTooltip = () => {
     font-family: 'poppins', sans-serif;
     font-size: var(--p-size);
     font-weight: 400;
-    line-height: 1.5em;
+    line-height: 1.75em;
     columns: 40ch;
     column-gap: 3rem;
     color: var(--background-solid);
@@ -493,7 +493,6 @@ const hideTooltip = () => {
     font-size: var(--small-size);
     font-weight: 400;
     color: var(--text);
-    line-height: 1.5em;
     max-width: max-content;
     padding: .25rem .75rem;
     background: var(--border-400);
@@ -573,7 +572,7 @@ const hideTooltip = () => {
     font-family: 'poppins', sans-serif;
     font-size: var(--p-size);
     font-weight: 400;
-    line-height: 1.5em;
+    line-height: 1.75em;
     color: var(--text);
 }
 
@@ -776,7 +775,7 @@ const hideTooltip = () => {
         font-family: 'poppins', sans-serif;
         font-size: var(--p-size);
         font-weight: 400;
-        line-height: 1.5em;
+        line-height: 1.75em;
         color: var(--text);
     }
 
@@ -802,6 +801,7 @@ const hideTooltip = () => {
         font-family: 'rm-mono', monospace;
         font-size: var(--small-size);
         font-weight: 400;
+        line-height: 1.75em;
         color: var(--border-400);
     }
 

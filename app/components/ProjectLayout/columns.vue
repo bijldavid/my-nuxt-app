@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
     font-family: 'poppins', sans-serif;
     font-size: var(--p-size);
     font-weight: 400;
-    line-height: 1.5em;
+    line-height: 1.75em;
 }
 
 .columns .col-2>div .paragraph {

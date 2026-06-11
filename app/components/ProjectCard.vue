@@ -175,6 +175,6 @@ defineProps(['id', 'slug', 'title', 'number', 'image', 'imageAlt', 'description'
     font-size: var(--small-size);
     font-weight: 400;
     color: var(--text);
-    line-height: 1.5em;
+    line-height: 1.75em;
 }
 </style>

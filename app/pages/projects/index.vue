@@ -333,7 +333,7 @@ onMounted(() => {
     font-size: var(--p-size);
     font-weight: 400;
     color: var(--text);
-    line-height: 1.5em;
+    line-height: 1.75em;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
