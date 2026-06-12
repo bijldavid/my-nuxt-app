@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="vertical-lines">
+        <!-- <div class="vertical-lines">
             <h2>
                 <slot name="title" />
             </h2>
@@ -20,7 +20,29 @@
                     View github
                 </a>
             </div>
+        </div> -->
+        <div class="content-container">
+            <h2>
+                <slot name="title" />
+            </h2>
+            <p>
+                <slot name="content" />
+            </p>
+
+            <div class="project-navigation">
+                <a :href="projectLink" target="_blank" rel="noopener noreferrer">
+                    View project
+                </a>
+                <a :href="projectLink" target="_blank" rel="noopener noreferrer">
+                    View github
+                </a>
+            </div>
         </div>
+
+        <div class="image-container">
+            <img :src="`/images/${project.slug}.png`" :alt="project.title">
+        </div>
+
     </section>
 </template>
 
@@ -37,95 +59,207 @@ import { cssCatProject as project } from '~/data/projects'
 <style scoped>
 section {
     display: grid;
-    gap: 3px;
+    grid-template-columns: 1fr 1fr;
 }
 
-section > div:nth-of-type(1) {
-    background-color: var(--border-400);
-    padding: 5rem;
-
-    display: grid;
-    gap: 1.5rem;
-
-    border-radius: 15px;
-    corner-shape: bevel;
+section .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 5rem;
+    padding-block: 3rem;
+    border-right: 1px solid var(--background-grid);
 }
 
-section > div:nth-of-type(2) {
-    position: relative;
-    background-color: var(--border-400);
-    padding: 2rem 5rem 5rem 5rem;
-
-    display: grid;
-    gap: 2rem;
-
-    border-radius: 15px;
-    corner-shape: bevel;
-    overflow: hidden;
-    z-index: 0;
-}
-
-section > div:nth-of-type(2)::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(0deg, transparent, var(--border-400)),
-        repeating-linear-gradient(90deg, transparent, transparent 20px, var(--border-300) 20px, var(--border-300) 21px),
-        repeating-linear-gradient(0deg, transparent, transparent 20px, var(--border-300) 20px, var(--border-300) 21px);
-
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-section div.vertical-lines {
-    z-index: 10;
-    --inline-offset: 5rem;
-    --line-color: var(--border-300);
-}
-
-section h2 {
+section .content-container h2 {
     font-family: 'poppins', sans-serif;
     font-size: var(--h2-size);
     font-weight: 400;
-    color: var(--background-solid);
-    height: max-content
+    color: var(--text);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-grid);
 }
 
-section p {
+section .content-container p {
+    position: relative;
     font-family: 'poppins', sans-serif;
     font-size: var(--p-size);
     font-weight: 400;
     line-height: 1.75em;
-    columns: 40ch;
-    column-gap: 3rem;
-    color: var(--background-solid);
+    padding-bottom: 3rem;
 }
 
-section div .image-container {
+section .content-container p::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -5rem;
+    width: calc(100% + 5rem + 5rem);
+    height: 1px;
+    background: var(--background-grid);
+}
+
+section .image-container {
+    display: grid;
+    place-items: center;
+    padding: 7.5rem;
+    margin: 2rem;
+    background-color: var(--backdrop-200);
+    background-image:
+        radial-gradient(circle, var(--backdrop-200), transparent),
+        linear-gradient(0deg, transparent, var(--backdrop-200)), repeating-linear-gradient(90deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px), repeating-linear-gradient(0deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px);
+    border: 1px solid var(--background-grid);
+}
+
+section .project-navigation {
+    padding-top: 2rem;
+    display: grid;
+    gap: .5rem;
+}
+
+section .project-navigation a {
+    position: relative;
+    width: max-content;
+    font-family: 'poppins', sans-serif;
+    color: var(--border-400);
+    font-size: var(--small-size);
+    font-weight: 400;
+    line-height: 1.75em;
+    padding-right: 1.5rem;
+}
+
+section .project-navigation a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: 0 -50%;
+    height: var(--small-size);
+    width: var(--small-size);
+    background: url('/images/external-link.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+
+section .project-navigation a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--border-400);
+    transition: width .3s ease;
+}
+
+section .project-navigation a:hover::before {
     width: 100%;
-    aspect-ratio: 16 / 6;
-    background: var(--border-300);
-    border-radius: 10px;
-    corner-shape: bevel;
-    overflow: hidden;
 }
 
-section div .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (width < 900px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+
+    section .content-container {
+        border-bottom: 1px solid var(--background-grid);
+    }
 }
 
-section div .project-navigation {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+@media (width < 700px) {
+
+    section .content-container {
+        padding-inline: 2rem;
+        padding-block: 3rem;
+        border-right: none;
+    }
+
+    section .content-container p {
+        position: relative;
+        font-family: 'poppins', sans-serif;
+        font-size: var(--p-size);
+        font-weight: 400;
+        line-height: 1.75em;
+        padding-bottom: 3rem;
+    }
+
+    section .content-container p::after {
+        left: -2rem;
+        width: calc(100% + 2rem + 2rem);
+    }
+
+    section .image-container {
+        display: grid;
+        place-items: center;
+        padding: 7.5rem;
+        margin: 2rem;
+        background-color: var(--backdrop-200);
+        background-image:
+            radial-gradient(circle, var(--backdrop-200), transparent),
+            linear-gradient(0deg, transparent, var(--backdrop-200)), repeating-linear-gradient(90deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px), repeating-linear-gradient(0deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px);
+        border: 1px solid var(--background-grid);
+    }
+
+    section .project-navigation {
+        padding-top: 2rem;
+        display: grid;
+        gap: .5rem;
+    }
+
+    section .project-navigation a {
+        position: relative;
+        width: max-content;
+        font-family: 'poppins', sans-serif;
+        color: var(--border-400);
+        font-size: var(--small-size);
+        font-weight: 400;
+        line-height: 1.75em;
+        padding-right: 1.5rem;
+    }
+
+    section .project-navigation a::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        translate: 0 -50%;
+        height: var(--small-size);
+        width: var(--small-size);
+        background: url('/images/external-link.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+    }
+
+
+    section .project-navigation a::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: var(--border-400);
+        transition: width .3s ease;
+    }
+
+    section .project-navigation a:hover::before {
+        width: 100%;
+    }
 }
 
-.label {
+
+
+
+
+
+
+
+
+
+/* .label {
     --timing-function: linear(0, 0.036 0.9%, 0.142 1.9%, 0.97 7.3%, 1.117 9.1%, 1.155 10%, 1.175 11%, 1.175 12%, 1.157 13.2%, 1.001 19%, 0.979 20.6%, 0.969 22.4%, 1.005 33.8%, 0.999 45.2%, 1);
 
     position: relative;
@@ -148,7 +282,7 @@ section div .project-navigation {
     text-transform: uppercase;
     font-size: var(--p-size);
     letter-spacing: .2em;
-    color: var(--border-400);
+    color: var(--background-grid);
     white-space: nowrap;
     cursor: pointer;
 }
@@ -171,5 +305,5 @@ section div .project-navigation {
 
 .label:nth-of-type(2)::after {
     animation-delay: .33s;
-}
+} */
 </style>

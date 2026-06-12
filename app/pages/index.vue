@@ -15,7 +15,7 @@
 
                 <div class="label">
                     <p>Open CV</p>
-                    <img src="/images/download.png" alt="">
+                    <img src="/images/external-link.png" alt="External Link">
                 </div>
             </li>
             <li>
@@ -106,6 +106,7 @@ definePageMeta({ layout: 'home' })
     isolation: isolate;
 
     display: flex;
+    align-items: center;
     gap: 1rem;
 
     padding: 4cqw 16cqw;
@@ -134,7 +135,7 @@ definePageMeta({ layout: 'home' })
 }
 
 .index ul li .label img {
-    height: 4.66cqw;
+    height: 4cqw;
 }
 
 .index ul li .label::after {

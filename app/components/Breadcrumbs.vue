@@ -33,6 +33,7 @@ header nav a {
     font-family: 'poppins', sans-serif;
     font-size: var(--small-size);
     font-weight: 400;
+    line-height: 1.75em;
     color: var(--text);
 }
 
@@ -42,7 +43,7 @@ header nav a:not(:last-of-type)::after {
     height: 2px;
     width: 0%;
     background: var(--border-400);
-    bottom: -2px;
+    bottom: -3px;
     left: 0;
     transition: width .3s ease;
 }
