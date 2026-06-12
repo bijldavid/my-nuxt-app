@@ -191,62 +191,7 @@ section .project-navigation a:hover::before {
     }
 
     section .image-container {
-        display: grid;
-        place-items: center;
-        padding: 7.5rem;
-        margin: 2rem;
-        background-color: var(--backdrop-200);
-        background-image:
-            radial-gradient(circle, var(--backdrop-200), transparent),
-            linear-gradient(0deg, transparent, var(--backdrop-200)), repeating-linear-gradient(90deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px), repeating-linear-gradient(0deg, transparent, transparent 20px, var(--background-solid) 20px, var(--background-solid) 21px);
-        border: 1px solid var(--background-grid);
-    }
-
-    section .project-navigation {
-        padding-top: 2rem;
-        display: grid;
-        gap: .5rem;
-    }
-
-    section .project-navigation a {
-        position: relative;
-        width: max-content;
-        font-family: 'poppins', sans-serif;
-        color: var(--border-400);
-        font-size: var(--small-size);
-        font-weight: 400;
-        line-height: 1.75em;
-        padding-right: 1.5rem;
-    }
-
-    section .project-navigation a::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: 0;
-        translate: 0 -50%;
-        height: var(--small-size);
-        width: var(--small-size);
-        background: url('/images/external-link.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 80%;
-    }
-
-
-    section .project-navigation a::before {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        height: 2px;
-        width: 0%;
-        background: var(--border-400);
-        transition: width .3s ease;
-    }
-
-    section .project-navigation a:hover::before {
-        width: 100%;
+        padding: 3.5rem;
     }
 }
 
