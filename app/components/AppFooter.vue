@@ -1,5 +1,5 @@
 <template>
-    <footer>
+    <footer class="reveal-ignore">
         <div class="container vertical-lines">
             <div class="left">
                 <img src="/images/db-logo-bright.png" alt="David Bijl Logo">
@@ -40,7 +40,14 @@
 <style scoped>
 footer {
     position: relative;
-    background: var(--border-400);
+    background-color: var(--border-400);
+    background-image:
+        radial-gradient(var(--border-400), transparent),
+        linear-gradient(0deg, transparent, var(--border-400)),
+        url('/images/dot.png');
+    background-size: 200%, 100%, 1rem;
+    background-position: center;
+    background-repeat: repeat;
     border-radius: 15px 15px 0 0;
     corner-shape: bevel;
 }
@@ -69,8 +76,8 @@ footer .container .left {
     isolation: isolate;
     position: relative;
     padding: 3rem;
+    background-color: var(--border-400);
     border: 1px solid var(--border-300);
-    border-left: none;
 }
 
 footer .container .left::before {
