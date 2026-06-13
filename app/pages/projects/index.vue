@@ -552,7 +552,7 @@ onMounted(() => {
     padding: 1rem var(--inline-offset) 3rem var(--inline-offset);
 }
 
-@media (width < 800px) {
+@media (width < 950px) {
 
     /* - - - - - - - - - - - - - - - - - - - - - - - - */
     /* PROJECT SCROLL */

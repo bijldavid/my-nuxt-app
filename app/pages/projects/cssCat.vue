@@ -126,10 +126,11 @@ div {
 `" />
 
                 </ProjectLayoutColumnItem>
-<!-- 
+
                 <video class="project-media" autoplay loop muted playsinline>
-                    <source src="/images/box-animation.webm" type="video/webm">
-                </video> -->
+                    <source src="/images/cube-alpha.mov" type="video/quicktime; codecs=hvc1">
+                    <source src="/images/cube.webm" type="video/webm; codecs=vp9">
+                </video>
 
                 <ProjectLayoutColumnItem index="02">
                     <p>
