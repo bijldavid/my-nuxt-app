@@ -1,26 +1,5 @@
 <template>
     <section>
-        <!-- <div class="vertical-lines">
-            <h2>
-                <slot name="title" />
-            </h2>
-            <p>
-                <slot name="content" />
-            </p>
-        </div>
-        <div>
-            <div class="image-container">
-                <img :src="`/images/16-6-${project.slug}.png`" :alt="project.title">
-            </div>
-            <div class="project-navigation">
-                <a :href="projectLink" class="label" target="_blank" rel="noopener noreferrer">
-                    View project
-                </a>
-                <a :href="projectLink" class="label" target="_blank" rel="noopener noreferrer">
-                    View github
-                </a>
-            </div>
-        </div> -->
         <div class="content-container">
             <h2>
                 <slot name="title" />
@@ -33,8 +12,8 @@
                 <a :href="projectLink" target="_blank" rel="noopener noreferrer">
                     View project
                 </a>
-                <a :href="projectLink" target="_blank" rel="noopener noreferrer">
-                    View github
+                <a :href="projectGithub" target="_blank" rel="noopener noreferrer">
+                    View github repository
                 </a>
             </div>
         </div>
@@ -50,6 +29,7 @@
 defineProps({
     index: String,
     projectLink: String,
+    projectGithub: String,
 })
 
 import { cssCatProject as project } from '~/data/projects'

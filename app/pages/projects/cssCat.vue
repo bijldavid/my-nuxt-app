@@ -126,10 +126,10 @@ div {
 `" />
 
                 </ProjectLayoutColumnItem>
-
+<!-- 
                 <video class="project-media" autoplay loop muted playsinline>
                     <source src="/images/box-animation.webm" type="video/webm">
-                </video>
+                </video> -->
 
                 <ProjectLayoutColumnItem index="02">
                     <p>
@@ -214,7 +214,8 @@ section:has(> div > input:checked) form {
                 </ProjectLayoutColumnItem>
 
                 <video class="project-media" autoplay loop muted playsinline>
-                    <source src="/images/catwalk.webm" type="video/webm">
+                    <source src="/images/css-cat-alpha.mov" type="video/quicktime; codecs=hvc1">
+                    <source src="/images/css-cat.webm" type="video/webm; codecs=vp9">
                 </video>
 
                 <ProjectLayoutColumnItem index="06">
@@ -240,7 +241,7 @@ section:has(> div > input:checked) form {
 
             <div class="empty horizontal-lines"></div>
 
-            <ProjectLayoutConclusion :project-link="project.projectLink">
+            <ProjectLayoutConclusion :project-link="project.projectLink" :project-github="project.projectGithub">
                 <template #title>Final Result</template>
                 <template #content>
                     The final result was a playful and interactive CSS experiment that showcased the possibilities of

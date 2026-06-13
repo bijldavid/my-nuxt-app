@@ -33,7 +33,7 @@ export const projects = [
         description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
         tags: ['Design', 'Code'],
         projectLink: 'https://bijldavid.github.io/CSS-to-the-rescue/',
-        projectGithub:'https://github.com/bijldavid/CSS-to-the-rescue',
+        projectGithub:'https://github.com/bijldavid/CSS-to-the-rescue'
     },
     {
         id: 'project-4',
